@@ -1,6 +1,11 @@
 class news {
     constructor() {
         this._newsContainer = document.getElementById("newsContainer");
+        this._newsCountElement = document.getElementById("newsCount");
+        this._newsCountElement.oninput = () => {
+            this._newsCount = this._newsCountElement.value;
+            this.requestNews(this._selectedSource);
+        };
     }
     
     addNewArticleItem(article) {
@@ -31,7 +36,8 @@ class news {
 
     requestNews(selectedSource)
     {
-        let newsUrl = `https://newsapi.org/v2/everything?sources=${selectedSource}&apiKey=cf033c57da2e4126b52df66a8cdd2f89`;
+        this._selectedSource = selectedSource;
+        let newsUrl = `https://newsapi.org/v2/everything?sources=${selectedSource}&apiKey=cf033c57da2e4126b52df66a8cdd2f89&pageSize=${this._newsCount}`;
         let newsRequest = new Request(newsUrl);
         fetch(newsRequest)
             .then(response => response.json())
