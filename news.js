@@ -1,7 +1,11 @@
+const masNewsCount = 10;
+
 class news {
     constructor() {
         this._newsContainer = document.getElementById("newsContainer");
         this._newsCountElement = document.getElementById("newsCount");
+        this._newsCount = masNewsCount;
+        this._newsCountElement.value = this._newsCount;
         this._newsCountElement.oninput = () => {
             this._newsCount = this._newsCountElement.value;
             this.requestNews(this._selectedSource);
