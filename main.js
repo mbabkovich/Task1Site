@@ -1,6 +1,6 @@
 function initialize() {
-    _app = new app();
-    _app.showNews();
+    let app = new App();
+    app.showNews();
 }
 	
 window.onload = initialize;

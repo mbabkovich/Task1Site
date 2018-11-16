@@ -1,7 +1,7 @@
 /* Include the padding and border in an element's total width and height */
-* {
+/** {
     box-sizing: border-box;
-}
+}*/
 
 /* Remove margins and padding from the list */
 ul {
@@ -12,7 +12,6 @@ ul {
 /* Style the list items */
 ul li {
     cursor: pointer;
-    position: relative;
     padding: 12px 8px 12px 40px;
     background: #eee;
     font-size: 18px;
@@ -55,8 +54,24 @@ input {
     margin: 0;
     border: none;
     border-radius: 0;
-    width: 75%;
     padding: 10px;
-    float: left;
     font-size: 16px;
+}
+
+#navigationBar {
+    float: left;
+    /*overflow: hidden;*/
+}
+
+#newsChannelsContainer {
+}
+
+#inputNewsNumberContainer {
+}
+
+#newsChannelsSelect {
+}
+
+#newsContainer {
+    display: inline;
 }

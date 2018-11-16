@@ -1,6 +1,6 @@
-class app {
+class App {
   constructor() {
-      this._newsChannels = new newsChannels();      
+      this._newsChannels = new NewsChannels();      
   }
 
   showNews() {
