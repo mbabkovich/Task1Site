@@ -1,0 +1,33 @@
+{
+  "name": "task1site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misha87/Task1Site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misha87/Task1Site/issues"
+  },
+  "homepage": "https://github.com/misha87/Task1Site#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
+    "webpack": "^4.26.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "es6-promise": "^4.2.5",
+    "whatwg-fetch": "^3.0.0"
+  }
+}

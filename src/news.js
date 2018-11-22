@@ -1,6 +1,8 @@
+import 'whatwg-fetch'
+
 const masNewsCount = 10;
 
-class News {
+export class News {
     constructor() {
         this._newsContainer = document.getElementById("newsContainer");
         this._newsCountElement = document.getElementById("newsCount");

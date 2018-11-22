@@ -1,4 +1,6 @@
-class NewsChannels {
+import { News } from './news'
+
+export class NewsChannels {
     constructor() {
         this._newsChannelsContainer = document.getElementById("newsChannelsContainer");
         this._news = new News();
