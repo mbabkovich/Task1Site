@@ -39,12 +39,12 @@ export class News {
         articles.forEach(article => this.addNewArticleItem(article));
     }
 
-    requestNews(selectedSource)
+    async requestNews(selectedSource)
     {
         this._selectedSource = selectedSource;
         let newsUrl = `https://newsapi.org/v2/everything?sources=${selectedSource}&apiKey=cf033c57da2e4126b52df66a8cdd2f89&pageSize=${this._newsCount}`;
-        fetch(newsUrl)
-            .then(response => response.json())
-            .then(data => this.fillNews(data.articles));
+        let response = await fetch(newsUrl);
+        let data = await response.json();
+        this.fillNews(data.articles);
     }
 }

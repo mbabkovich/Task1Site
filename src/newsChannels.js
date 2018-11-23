@@ -26,11 +26,11 @@ export class NewsChannels {
         sources.forEach(source => this.addNewChannel(source));
     }
 
-    requestNewsChannels()
+    async requestNewsChannels()
     {
         let newsSourcesUrl = 'https://newsapi.org/v2/sources?apiKey=cf033c57da2e4126b52df66a8cdd2f89';
-        fetch(newsSourcesUrl)
-            .then(response => response.json())
-            .then(data => this.fillNewsChannels(data.sources));
+        let response = await fetch(newsSourcesUrl);
+        let data = await response.json();
+        this.fillNewsChannels(data.sources)
     }
 }
