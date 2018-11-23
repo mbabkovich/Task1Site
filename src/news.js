@@ -31,8 +31,7 @@ export class News {
 
     fillNews(articles) {
         if (this._newsList) {
-            this._newsList.remove();
-            this._newsList = null;
+            this._newsContainer.removeChild(this._newsList);
         }
         
         this._newsList = document.createElement("ul");

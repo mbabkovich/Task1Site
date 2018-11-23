@@ -15,7 +15,7 @@ export class NewsChannels {
 
     fillNewsChannels(sources) {
         if (this._newsChannelsList) {
-            this._newsChannelsList.remove();
+            this._newsChannelsContainer.removeChild(this._newsChannelsList);
         }
         
         this._newsChannelsList = document.createElement("Select");
