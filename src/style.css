@@ -74,4 +74,9 @@ input {
 
 #newsContainer {
     overflow: hidden;
+    background-color: #f44336;
 }
+
+body {
+    background: grey;
+};

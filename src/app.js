@@ -1,3 +1,7 @@
+import './style.css';
+
+import 'babel-polyfill'
+
 import { NewsChannels } from './newsChannels'
 
 export class App {
