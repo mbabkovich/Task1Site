@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
 
-import { NewsRequest } from './requests/newsRequest'
+import { RequestFactory } from './requests/requestFactory'
 
 const masNewsCount = 10;
 
@@ -14,6 +14,7 @@ export class News {
             this._newsCount = this._newsCountElement.value;
             this.requestNews(this._selectedSource);
         };
+        this._
     }
     
     addNewArticleItem(article) {
@@ -43,8 +44,9 @@ export class News {
 
     async requestNews(selectedSource)
     {
+        let requestFactory = new RequestFactory();
+        let newsRequest = requestFactory.newsRequest(selectedSource, this._newsCount);
         this._selectedSource = selectedSource;
-        let newsRequest = new NewsRequest(selectedSource, this._newsCount);
         let data = await newsRequest.request();
         this.fillNews(data ? data.articles : []);
     }

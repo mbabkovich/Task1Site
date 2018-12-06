@@ -2,7 +2,8 @@ const importRequestErrorHandlerModule = () => import('../errors/requestErrorHand
 
 export class Request
 {
-    constructor(method, baseUrl, parameters) {
+    constructor(requestName, method, baseUrl, parameters) {
+        this._requestName = requestName;
         this._method = method;
 
         // TODO: implement authentication. For now just hard code the api key.

@@ -1,6 +1,6 @@
 import { News } from './news'
 
-import { NewsChannelsRequest } from './requests/newsChannelsRequest'
+import { RequestFactory } from './requests/requestFactory'
 
 export class NewsChannels {
     constructor() {
@@ -30,7 +30,8 @@ export class NewsChannels {
 
     async requestNewsChannels()
     {
-        let newsChannelsRequest = new NewsChannelsRequest();
+        let requestFactory = new RequestFactory();
+        let newsChannelsRequest = requestFactory.newsChannelsRequest();
         let data = await newsChannelsRequest.request();
         this.fillNewsChannels(data ? data.sources : [])
     }

@@ -9,6 +9,6 @@ const newsUrl = `${baseUrls.news}/sources`;
 export class NewsChannelsRequest extends Request {
     constructor() {
         let parameters = {};
-        super(requestMethod.get, newsUrl, parameters);
+        super("NewsChannelsRequest", requestMethod.get, newsUrl, parameters);
     }
 }

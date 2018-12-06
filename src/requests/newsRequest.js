@@ -12,6 +12,6 @@ export class NewsRequest extends Request {
             sources: source,
             pageSize: maxNewsCount
         };
-        super(requestMethod.get, newsUrl, parameters);
+        super("NewsRequest", requestMethod.get, newsUrl, parameters);
     }
 }
