@@ -1,5 +1,7 @@
 import 'whatwg-fetch'
 
+import { NewsRequest } from './requests/newsRequest'
+
 const masNewsCount = 10;
 
 export class News {
@@ -42,9 +44,8 @@ export class News {
     async requestNews(selectedSource)
     {
         this._selectedSource = selectedSource;
-        let newsUrl = `https://newsapi.org/v2/everything?sources=${selectedSource}&apiKey=cf033c57da2e4126b52df66a8cdd2f89&pageSize=${this._newsCount}`;
-        let response = await fetch(newsUrl);
-        let data = await response.json();
-        this.fillNews(data.articles);
+        let newsRequest = new NewsRequest(selectedSource, this._newsCount);
+        let data = await newsRequest.request();
+        this.fillNews(data ? data.articles : []);
     }
 }

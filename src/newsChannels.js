@@ -1,5 +1,7 @@
 import { News } from './news'
 
+import { NewsChannelsRequest } from './requests/newsChannelsRequest'
+
 export class NewsChannels {
     constructor() {
         this._newsChannelsContainer = document.getElementById("newsChannelsContainer");
@@ -28,9 +30,8 @@ export class NewsChannels {
 
     async requestNewsChannels()
     {
-        let newsSourcesUrl = 'https://newsapi.org/v2/sources?apiKey=cf033c57da2e4126b52df66a8cdd2f89';
-        let response = await fetch(newsSourcesUrl);
-        let data = await response.json();
-        this.fillNewsChannels(data.sources)
+        let newsChannelsRequest = new NewsChannelsRequest();
+        let data = await newsChannelsRequest.request();
+        this.fillNewsChannels(data ? data.sources : [])
     }
 }
